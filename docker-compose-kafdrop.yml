@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  kafka-drop:
+    image: obsidiandynamics/kafdrop:3.31.0
+    container_name: kafka_drop
+    depends_on:
+      - kafka
+      - zookeeper
+    environment:
+      KAFKA_BROKERCONNECT: kafka:19092
+      JVM_OPTS: "-Xms32M -Xmx64M"
+      ZOOKEEPER_CONNECT: zookeeper:2181
+    ports:
+      - "9000:9000"
+    restart: unless-stopped

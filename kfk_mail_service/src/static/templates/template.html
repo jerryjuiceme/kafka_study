@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Album Release!</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+        .container {
+            max-width: 640px;
+            margin: 30px auto;
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, #ff2e63, #08f);
+        }
+        h1 {
+            color: #ff2e63;
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .cover-image {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .cover-image img {
+            max-width: 100%;
+            border-radius: 15px;
+            border: 3px solid #08f;
+            transition: transform 0.3s;
+        }
+        .cover-image img:hover {
+            transform: scale(1.05);
+        }
+        .description {
+            text-align: justify;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #e0e0e0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        .video-container a {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .video-container img {
+            width: 100%;
+            border-radius: 15px;
+        }
+        .video-container .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: opacity 0.3s;
+        }
+        .video-container:hover .play-icon {
+            opacity: 0.8;
+        }
+        .social-links {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #08f;
+            font-size: 18px;
+            font-weight: 500;
+            transition: color 0.3s, transform 0.3s;
+            position: relative;
+        }
+        .social-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #ff2e63;
+            transition: width 0.3s;
+        }
+        .social-links a:hover::after {
+            width: 100%;
+        }
+        .social-links a:hover {
+            color: #ff2e63;
+            transform: translateY(-2px);
+        }
+        .cta-button {
+            display: block;
+            width: 240px;
+            margin: 30px auto;
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(45deg, #ff2e63, #08f);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .secondary-cta {
+            display: block;
+            width: 240px;
+            margin: 20px auto;
+            padding: 12px;
+            text-align: center;
+            background: transparent;
+            border: 2px solid #08f;
+            color: #08f;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .secondary-cta:hover {
+            background-color: #08f;
+            color: #ffffff;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #b0bec5;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+        }
+        .highlight {
+            color: #ff2e63;
+            font-weight: 600;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Mission Jupiter - Aftermath 2025!</h1>
+        
+        <!-- Cover Image -->
+        <div class="cover-image">
+            <img src="https://i0.wp.com/maximumvolumemusic.com/wp-content/uploads/e1f5fe15175d3d9e5be369d2d581767e05afa76a.jpg?resize=696%2C464&ssl=1" alt="Album Cover">
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <p>Hello, <span class="highlight"> Friend!</span>!</p>
+            <p>{{ message_body }}</p>
+            <p>Formed in Minsk, Belarus, two previous album releases by alternative/progressive metal group Mission Jupiter have hinted that they have the potential to be one of the few acts from that territory to achieve lift-off worldwide. Having recruited powerhouse singer <span class="highlight">Kate Varsak</span> prior to writing and recording their upcoming third album, <span class="highlight">‘Aftermath’</span>, the result is a set of dramatic, epic songs with thoroughly modern production values that should see them soar.</p>
+            <p>A first single from the record, <span class="highlight">‘Sometimes It Hurts’</span>, was issued in October and described by Prog magazine as “a soaring slice of uplifting and dramatic melodic prog.” Its follow-up, <span class="highlight">‘Human Nature’</span>, has been released today and ratchets up the cinematic aspect of the group’s sound. Boasting a Bond-like quality, with subtle shifts in tone and dripping with atmosphere, it isn’t hard to imagine Adele having a hit with this if she were in a hard-edged alternative rock band.</p>
+        </div>
+
+        <!-- YouTube Video 1 -->
+        <div class="video-container">
+            <a href="https://www.youtube.com/watch?v=fMgZ-yh8AEg" target="_blank">
+                <img src="https://img.youtube.com/vi/fMgZ-yh8AEg/maxresdefault.jpg" alt="YouTube Video">
+                <div class="play-icon">
+                    <svg width="68" height="48" viewBox="0 0 68 48">
+                        <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.2 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 3 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c3-.8 4.6-3.2 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#ff2e63"/>
+                        <path d="M45 24L27 14v20" fill="#fff"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <!-- YouTube Video 2 -->
+        <div class="video-container">
+            <a href="https://www.youtube.com/watch?v=t7XA1ciX8lc" target="_blank">
+                <img src="https://img.youtube.com/vi/t7XA1ciX8lc/maxresdefault.jpg" alt="YouTube Video">
+                <div class="play-icon">
+                    <svg width="68" height="48" viewBox="0 0 68 48">
+                        <path d="M66.5 7.7c-.8-2.9-2.5-5.4-5.4-6.2C55.8.1 34 0 34 0S12.2.1 6.9 1.5C4 2.3 2.2 4.8 1.5 7.7.1 13 0 24 0 24s.1 11 1.5 16.3c.8 3 2.5 5.4 5.4 6.2C12.2 47.9 34 48 34 48s21.8-.1 27.1-1.5c3-.8 4.6-3.2 5.4-6.2C67.9 35 68 24 68 24s-.1-11-1.5-16.3z" fill="#ff2e63"/>
+                        <path d="M45 24L27 14v20" fill="#fff"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <a href="https://yourlink.com" class="cta-button">Listen Now</a>
+        <a href="https://yourlink.com/preorder" class="secondary-cta">Pre-Order Album</a>
+
+        <!-- Social Links -->
+        <div class="social-links">
+            <a href="https://facebook.com/yourband">Facebook</a>
+            <a href="https://instagram.com/yourband">Instagram</a>
+            <a href="https://twitter.com/yourband">Twitter</a>
+            <a href="https://youtube.com/yourband">YouTube</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            © 2023 Mission Jupiter. All rights reserved.<br>
+            You are receiving this email because you signed up for updates.
+        </div>
+    </div>
+</body>
+</html>
